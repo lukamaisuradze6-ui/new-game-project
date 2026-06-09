@@ -1,0 +1,101 @@
+[gd_scene load_steps=13 format=3 uid="uid://c8l80emx6xhqg"]
+
+[ext_resource type="Texture2D" uid="uid://ddyoqyhb57mvh" path="res://images/black.jpg" id="1_5p8wc"]
+[ext_resource type="Script" uid="uid://bw6rttiuc4x7t" path="res://scripts/settings.gd" id="1_6wm04"]
+[ext_resource type="FontFile" uid="uid://woba3cwutync" path="res://fonts/amstrad-cpc-extended.otf" id="2_r6d6q"]
+[ext_resource type="Texture2D" uid="uid://ccp5f4yhvc3o" path="res://sprites/backgrounds/MainMenuBg/bg1..png" id="3_4ppmf"]
+[ext_resource type="Script" uid="uid://d86bod3hevdk" path="res://scripts/Mood_Button.gd" id="4_f4mfi"]
+[ext_resource type="Texture2D" uid="uid://dyiuopdworsas" path="res://sprites/backgrounds/MainMenuBg/bg2..png" id="4_uhhto"]
+[ext_resource type="Texture2D" uid="uid://2ddil2kddcpq" path="res://sprites/backgrounds/MainMenuBg/bg3.png" id="5_1g033"]
+[ext_resource type="Script" uid="uid://beswbgad4wajm" path="res://scripts/Fullscreen_on_off.gd" id="5_es4n0"]
+[ext_resource type="Texture2D" uid="uid://bvj6p4gxf58or" path="res://sprites/backgrounds/MainMenuBg/bg4.png" id="6_01roj"]
+[ext_resource type="Texture2D" uid="uid://m7k5vpcpkxl7" path="res://sprites/backgrounds/MainMenuBg/bg5.png" id="7_wqwn7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oe2nd"]
+animations = [{
+"frames": [{
+"duration": 4.0,
+"texture": ExtResource("3_4ppmf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_uhhto")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1g033")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_01roj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wqwn7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_f4mfi"]
+
+[node name="settings" type="Node2D"]
+script = ExtResource("1_6wm04")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(512, 255.49998)
+scale = Vector2(1.6463022, 1.4657142)
+texture = ExtResource("1_5p8wc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D"]
+position = Vector2(0.911, -1.367)
+scale = Vector2(2.489, 2.788)
+sprite_frames = SubResource("SpriteFrames_oe2nd")
+autoplay = "default"
+frame_progress = 0.23436956
+
+[node name="settings_to_main" type="Button" parent="Sprite2D"]
+texture_filter = 1
+offset_left = -73.49805
+offset_top = 100.63355
+offset_right = 63.501953
+offset_bottom = 137.47568
+theme_override_fonts/font = ExtResource("2_r6d6q")
+theme_override_font_sizes/font_size = 16
+text = "GO BACK"
+script = SubResource("GDScript_f4mfi")
+
+[node name="Button" type="Button" parent="Sprite2D"]
+offset_left = 31.0
+offset_top = -90.0
+offset_right = 131.0
+offset_bottom = -40.0
+theme_override_fonts/font = ExtResource("2_r6d6q")
+text = "DEFAULT"
+script = ExtResource("4_f4mfi")
+
+[node name="Button2" type="Button" parent="Sprite2D"]
+offset_left = 31.0
+offset_top = -20.0
+offset_right = 131.0
+offset_bottom = 30.0
+theme_override_fonts/font = ExtResource("2_r6d6q")
+text = "ON"
+script = ExtResource("5_es4n0")
+
+[node name="Label" type="Label" parent="Sprite2D"]
+offset_left = -122.0
+offset_top = -82.212
+offset_right = -32.0
+offset_bottom = -47.211998
+theme_override_fonts/font = ExtResource("2_r6d6q")
+text = "	VIBE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Sprite2D"]
+offset_left = -155.0
+offset_top = -13.0
+offset_right = 5.0
+offset_bottom = 22.0
+theme_override_fonts/font = ExtResource("2_r6d6q")
+text = "FULLSCREEN"
+horizontal_alignment = 1
+vertical_alignment = 1

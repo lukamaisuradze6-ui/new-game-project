@@ -1,0 +1,113 @@
+[gd_scene load_steps=14 format=3 uid="uid://4pqund3nukl7"]
+
+[ext_resource type="Script" uid="uid://dt3nc4our1mgp" path="res://scripts/Main_Menu.gd" id="1_igs2m"]
+[ext_resource type="Texture2D" uid="uid://ddyoqyhb57mvh" path="res://images/black.jpg" id="2_3pujl"]
+[ext_resource type="FontFile" uid="uid://woba3cwutync" path="res://fonts/amstrad-cpc-extended.otf" id="3_7uvds"]
+[ext_resource type="Texture2D" uid="uid://ccp5f4yhvc3o" path="res://sprites/backgrounds/MainMenuBg/bg1..png" id="3_rqglp"]
+[ext_resource type="Texture2D" uid="uid://dyiuopdworsas" path="res://sprites/backgrounds/MainMenuBg/bg2..png" id="4_0y70q"]
+[ext_resource type="Texture2D" uid="uid://2ddil2kddcpq" path="res://sprites/backgrounds/MainMenuBg/bg3.png" id="5_qrn07"]
+[ext_resource type="Texture2D" uid="uid://bvj6p4gxf58or" path="res://sprites/backgrounds/MainMenuBg/bg4.png" id="6_lidg2"]
+[ext_resource type="Texture2D" uid="uid://m7k5vpcpkxl7" path="res://sprites/backgrounds/MainMenuBg/bg5.png" id="7_raimv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qy7ti"]
+animations = [{
+"frames": [{
+"duration": 4.0,
+"texture": ExtResource("3_rqglp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0y70q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qrn07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_lidg2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_raimv")
+}],
+"loop": true,
+"name": &"Loop",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_epypp"]
+length = 5.0
+
+[sub_resource type="Animation" id="Animation_0e48y"]
+resource_name = "intro"
+length = 5.0
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0hol4"]
+_data = {
+&"RESET": SubResource("Animation_epypp"),
+&"intro": SubResource("Animation_0e48y")
+}
+
+[sub_resource type="GDScript" id="GDScript_0hol4"]
+script/source = "extends AnimationPlayer
+"
+
+[node name="begin" type="Node2D"]
+script = ExtResource("1_igs2m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(512, 256)
+scale = Vector2(1.6463022, 1.4628572)
+texture = ExtResource("2_3pujl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D"]
+position = Vector2(0.91113544, -1.3671881)
+scale = Vector2(2.489006, 2.7877805)
+sprite_frames = SubResource("SpriteFrames_qy7ti")
+animation = &"Loop"
+autoplay = "Loop"
+frame_progress = 0.99691576
+
+[node name="play" type="Button" parent="Sprite2D"]
+texture_filter = 1
+offset_left = -39.48242
+offset_top = -38.281242
+offset_right = 51.023438
+offset_bottom = -5.4687424
+theme_override_fonts/font = ExtResource("3_7uvds")
+theme_override_font_sizes/font_size = 16
+text = "PLAY"
+metadata/_edit_use_anchors_ = true
+
+[node name="settings" type="Button" parent="Sprite2D"]
+texture_filter = 1
+offset_left = -60.742188
+offset_top = 7.5195313
+offset_right = 75.25781
+offset_bottom = 34.179688
+theme_override_fonts/font = ExtResource("3_7uvds")
+text = "SETTINGS"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Sprite2D"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -311.0
+offset_top = -90.91795
+offset_right = -311.0
+offset_bottom = -65.91795
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_7uvds")
+theme_override_font_sizes/font_size = 25
+text = "THE HORNED ONE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FadeOverlay" type="ColorRect" parent="."]
+visible = false
+offset_right = 1025.0
+offset_bottom = 513.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_0hol4")
+}
+script = SubResource("GDScript_0hol4")

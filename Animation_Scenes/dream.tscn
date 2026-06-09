@@ -1,0 +1,320 @@
+[gd_scene load_steps=21 format=3 uid="uid://bduty5dwnm0uk"]
+
+[ext_resource type="Texture2D" uid="uid://wdomskkdvd1n" path="res://sprites/scene_arts/dream man/1.png" id="1_ffvat"]
+[ext_resource type="Texture2D" uid="uid://cq3cn0rpmwoy1" path="res://sprites/scene_arts/dream man/2.png" id="2_ifq70"]
+[ext_resource type="Texture2D" uid="uid://dj4spfburkbmf" path="res://sprites/scene_arts/dream man/3.png" id="3_an388"]
+[ext_resource type="Texture2D" uid="uid://dw3rgyy0wrimt" path="res://sprites/scene_arts/dream man/5.png" id="4_ifq70"]
+[ext_resource type="Texture2D" uid="uid://bn67bu60q8543" path="res://sprites/scene_arts/dream man/4.png" id="5_7pg8d"]
+[ext_resource type="Texture2D" uid="uid://crmrt0b7840ye" path="res://sprites/scene_arts/dream man/6.png" id="6_0kmhc"]
+[ext_resource type="Texture2D" uid="uid://0m3582jvo554" path="res://sprites/scene_arts/dream man/7.png" id="7_jkyyr"]
+[ext_resource type="Texture2D" uid="uid://bcrsbgp1tciku" path="res://sprites/scene_arts/dream man/9.png" id="8_l4xry"]
+[ext_resource type="Texture2D" uid="uid://dif4a7yieleie" path="res://sprites/scene_arts/dream man/10.png" id="9_a7qkr"]
+[ext_resource type="Texture2D" uid="uid://cfr5j3p8jwolw" path="res://sprites/scene_arts/dream man/12.png" id="10_p4khl"]
+[ext_resource type="Texture2D" uid="uid://c4bw5m4evgi75" path="res://sprites/scene_arts/dream man/13.png" id="11_mhc3y"]
+[ext_resource type="Texture2D" uid="uid://dnogvwidkw10q" path="res://sprites/scene_arts/dream man/14.png" id="12_fgo4a"]
+[ext_resource type="Texture2D" uid="uid://ennwqtjdflby" path="res://sprites/scene_arts/dream man/15.png" id="13_hskeb"]
+[ext_resource type="Texture2D" uid="uid://dwyya5gg33oei" path="res://sprites/scene_arts/dream man/16.png" id="14_li7bp"]
+[ext_resource type="Script" uid="uid://covdwjigll068" path="res://Animation_Scenes/fullscreen_cutscene.gd" id="15_a7qkr"]
+[ext_resource type="Shader" uid="uid://dyxjadljc6qi" path="res://Animation_Scenes/dream.gdshader" id="16_mhc3y"]
+[ext_resource type="FontFile" uid="uid://woba3cwutync" path="res://fonts/amstrad-cpc-extended.otf" id="17_mhc3y"]
+[ext_resource type="Script" uid="uid://blr1tvfrsbvjy" path="res://scripts/dreammanspeech.gd" id="18_fgo4a"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_khpyl"]
+animations = [{
+"frames": [{
+"duration": 0.6,
+"texture": ExtResource("1_ffvat")
+}, {
+"duration": 0.5,
+"texture": ExtResource("2_ifq70")
+}, {
+"duration": 0.7,
+"texture": ExtResource("3_an388")
+}, {
+"duration": 0.6,
+"texture": ExtResource("1_ffvat")
+}],
+"loop": false,
+"name": &"01_hi",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ffvat")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_an388")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ifq70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ifq70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_ffvat")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ifq70")
+}],
+"loop": false,
+"name": &"02_i_know_you",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ffvat")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ifq70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7pg8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_an388")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7pg8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ifq70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7pg8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_an388")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_ffvat")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_an388")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7pg8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_an388")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_ffvat")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7pg8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_an388")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ifq70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_ffvat")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_an388")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ifq70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ifq70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_ffvat")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_an388")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7pg8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0kmhc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ifq70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jkyyr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_ffvat")
+}],
+"loop": false,
+"name": &"03_and_i_know_what_you\'ll_become",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ffvat")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ifq70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_an388")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_ffvat")
+}],
+"loop": false,
+"name": &"04_horns",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ffvat")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ifq70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7pg8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ifq70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_ffvat")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ifq70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_an388")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ifq70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7pg8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_an388")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ifq70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7pg8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ifq70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ifq70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ifq70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0kmhc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_an388")
+}],
+"loop": false,
+"name": &"05_they_wait_for_you",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 4.0,
+"texture": ExtResource("8_l4xry")
+}, {
+"duration": 3.0,
+"texture": ExtResource("9_a7qkr")
+}, {
+"duration": 3.0,
+"texture": ExtResource("10_p4khl")
+}, {
+"duration": 2.0,
+"texture": ExtResource("11_mhc3y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_fgo4a")
+}, {
+"duration": 2.0,
+"texture": ExtResource("13_hskeb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_li7bp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_li7bp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_hskeb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_hskeb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_li7bp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_li7bp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_hskeb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_hskeb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_li7bp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_li7bp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_hskeb")
+}],
+"loop": false,
+"name": &"06_end",
+"speed": 6.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p4khl"]
+shader = ExtResource("16_mhc3y")
+shader_parameter/crt_curve = 0.05
+shader_parameter/vignette_amount = 0.3
+shader_parameter/abberation_amount = 0.01
+shader_parameter/darkness_amount = 0.15
+
+[node name="DREAM" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="FullscreenCutscene" type="AnimatedSprite2D" parent="CanvasLayer"]
+position = Vector2(512.14514, 255.99998)
+scale = Vector2(7.997732, 8.000001)
+sprite_frames = SubResource("SpriteFrames_khpyl")
+animation = &"03_and_i_know_what_you\'ll_become"
+script = ExtResource("15_a7qkr")
+
+[node name="DreamFilter" type="ColorRect" parent="CanvasLayer"]
+top_level = true
+material = SubResource("ShaderMaterial_p4khl")
+offset_top = -3.0
+offset_right = 1027.0
+offset_bottom = 518.0
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer2"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -184.0
+offset_right = 6.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("17_mhc3y")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("18_fgo4a")
