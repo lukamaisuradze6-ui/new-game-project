@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbu05h76rden8"]
+
+[ext_resource type="Script" uid="uid://d0pjaj7wpn3lm" path="res://mechanisms/fight_mechanism.gd" id="1_k4lkh"]
+
+[node name="Fight_Mechanism" type="Node2D"]
+script = ExtResource("1_k4lkh")
+
+[node name="PlayerSpawn" type="Marker2D" parent="."]
+position = Vector2(482, 397)
+
+[node name="MiddlePos" type="Marker2D" parent="PlayerSpawn"]
+
+[node name="LeftPos" type="Marker2D" parent="PlayerSpawn"]
+position = Vector2(-154, -5)
+
+[node name="RightPos" type="Marker2D" parent="PlayerSpawn"]
+position = Vector2(180, 1)
+
+[node name="EnemySpawn" type="Marker2D" parent="."]
+position = Vector2(490, 62)
+
+[node name="MiddlePos" type="Marker2D" parent="EnemySpawn"]
+
+[node name="LeftPos" type="Marker2D" parent="EnemySpawn"]
+position = Vector2(-160, 0)
+
+[node name="RightPos" type="Marker2D" parent="EnemySpawn"]
+position = Vector2(170, 1)
