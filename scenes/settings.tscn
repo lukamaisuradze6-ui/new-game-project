@@ -1,15 +1,17 @@
-[gd_scene load_steps=13 format=3 uid="uid://c8l80emx6xhqg"]
+[gd_scene load_steps=16 format=3 uid="uid://c8l80emx6xhqg"]
 
 [ext_resource type="Texture2D" uid="uid://ddyoqyhb57mvh" path="res://images/black.jpg" id="1_5p8wc"]
 [ext_resource type="Script" uid="uid://bw6rttiuc4x7t" path="res://scripts/settings.gd" id="1_6wm04"]
 [ext_resource type="FontFile" uid="uid://woba3cwutync" path="res://fonts/amstrad-cpc-extended.otf" id="2_r6d6q"]
 [ext_resource type="Texture2D" uid="uid://ccp5f4yhvc3o" path="res://sprites/backgrounds/MainMenuBg/bg1..png" id="3_4ppmf"]
+[ext_resource type="Script" uid="uid://ci8c45p3pyk12" path="res://scripts/MainmenuVignitte.gd" id="4_1g033"]
 [ext_resource type="Script" uid="uid://d86bod3hevdk" path="res://scripts/Mood_Button.gd" id="4_f4mfi"]
 [ext_resource type="Texture2D" uid="uid://dyiuopdworsas" path="res://sprites/backgrounds/MainMenuBg/bg2..png" id="4_uhhto"]
 [ext_resource type="Texture2D" uid="uid://2ddil2kddcpq" path="res://sprites/backgrounds/MainMenuBg/bg3.png" id="5_1g033"]
 [ext_resource type="Script" uid="uid://beswbgad4wajm" path="res://scripts/Fullscreen_on_off.gd" id="5_es4n0"]
 [ext_resource type="Texture2D" uid="uid://bvj6p4gxf58or" path="res://sprites/backgrounds/MainMenuBg/bg4.png" id="6_01roj"]
 [ext_resource type="Texture2D" uid="uid://m7k5vpcpkxl7" path="res://sprites/backgrounds/MainMenuBg/bg5.png" id="7_wqwn7"]
+[ext_resource type="Shader" uid="uid://dqpslp2lyxpum" path="res://scripts/mainmenu.gdshader" id="11_uhhto"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oe2nd"]
 animations = [{
@@ -35,6 +37,16 @@ animations = [{
 }]
 
 [sub_resource type="GDScript" id="GDScript_f4mfi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_01roj"]
+shader = ExtResource("11_uhhto")
+shader_parameter/curvature = 0.15
+shader_parameter/scanline_count = 300.0
+shader_parameter/scanline_opacity = 0.35
+shader_parameter/scanline_speed = 1.0
+shader_parameter/pixel_bleed = 0.003
+shader_parameter/vignette_intensity = 1.3
+shader_parameter/brightness_boost = 1.4
 
 [node name="settings" type="Node2D"]
 script = ExtResource("1_6wm04")
@@ -99,3 +111,18 @@ theme_override_fonts/font = ExtResource("2_r6d6q")
 text = "FULLSCREEN"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Sprite2D"]
+material = SubResource("ShaderMaterial_01roj")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -311.0
+offset_top = -174.31773
+offset_right = -311.0
+offset_bottom = -174.31773
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_1g033")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

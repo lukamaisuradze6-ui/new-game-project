@@ -4,7 +4,14 @@ extends Node2D
 @onready var Settings_Button: Button = $Sprite2D/settings
 @onready var fade_overlay: ColorRect = $FadeOverlay
 
+
+#@onready var song = $AudioStreamPlayer2D
+
+
+
 func _ready() -> void:
+	#song.stream.loop = true
+	#song.play()
 	Play_Button.pressed.connect(_on_play_button_pressed)
 	Settings_Button.pressed.connect(_on_settings_button_pressed)
 	

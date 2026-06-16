@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsk54g2x7gli8"]
+
+[ext_resource type="AudioStream" uid="uid://c6xxqdklyerp" path="res://sounds/musics/MainMenuSoundtrack.ogg" id="1_cei50"]
+[ext_resource type="Script" uid="uid://dcgqbvupigq5c" path="res://singleton/music.gd" id="2_ewr3d"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_cei50")
+script = ExtResource("2_ewr3d")

@@ -3,7 +3,7 @@ extends Node2D
 @onready var Goback_Button: Button = $Sprite2D/settings_to_main
 
 
-
+@onready var song = $AudioStreamPlayer2D
 
 
 func _ready() -> void:

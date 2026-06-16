@@ -19,6 +19,7 @@ config/autoload_on_startup=true
 
 Settings="*res://singleton/settings.gd"
 ThemeManager="*res://singleton/theme_manager.tscn"
+Music="*res://singleton/Music.tscn"
 
 [display]
 
