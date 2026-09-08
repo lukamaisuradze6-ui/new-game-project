@@ -1,5 +1,77 @@
-[gd_scene format=3 uid="uid://b5u7tqmtotsw2"]
+[gd_scene load_steps=11 format=3 uid="uid://b5u7tqmtotsw2"]
+
+[ext_resource type="Shader" uid="uid://dyxjadljc6qi" path="res://Animation_Scenes/dream.gdshader" id="1_fu81o"]
+[ext_resource type="Texture2D" uid="uid://blsxhgcjmil2c" path="res://sprites/scene_arts/wakeup/1.jpg" id="1_gaobg"]
+[ext_resource type="Texture2D" uid="uid://bpmw7m5mna621" path="res://sprites/scene_arts/wakeup/2.jpg" id="2_k2jwc"]
+[ext_resource type="Texture2D" uid="uid://du4dsosnn1ubi" path="res://sprites/scene_arts/wakeup/3.jpg" id="3_n6yg8"]
+[ext_resource type="Texture2D" uid="uid://glgtu23rcc72" path="res://sprites/scene_arts/wakeup/4.jpg" id="4_5irvn"]
+[ext_resource type="Script" uid="uid://k8kmqo2vrhac" path="res://scripts/animated_sprite_2d.gd" id="6_uive5"]
+[ext_resource type="FontFile" uid="uid://woba3cwutync" path="res://fonts/amstrad-cpc-extended.otf" id="7_524en"]
+[ext_resource type="Script" uid="uid://clxfeq0uytyh5" path="res://scripts/Wakeup_Speech.gd" id="8_nmsxs"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_77ikc"]
+shader = ExtResource("1_fu81o")
+shader_parameter/crt_curve = 0.05
+shader_parameter/vignette_amount = 0.3
+shader_parameter/abberation_amount = 0.01
+shader_parameter/darkness_amount = 0.15
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fu81o"]
+animations = [{
+"frames": [{
+"duration": 4.0,
+"texture": ExtResource("1_gaobg")
+}, {
+"duration": 3.0,
+"texture": ExtResource("2_k2jwc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_n6yg8")
+}, {
+"duration": 40.0,
+"texture": ExtResource("4_5irvn")
+}, {
+"duration": 7.0,
+"texture": ExtResource("1_gaobg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_n6yg8")
+}],
+"loop": false,
+"name": &"default",
+"speed": 7.0
+}]
 
 [node name="WAKEUP" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="DreamFilter" type="ColorRect" parent="."]
+top_level = true
+material = SubResource("ShaderMaterial_77ikc")
+offset_top = -3.0
+offset_right = 1027.0
+offset_bottom = 518.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(508.00003, 261.5)
+scale = Vector2(0.80113643, 0.76953125)
+sprite_frames = SubResource("SpriteFrames_fu81o")
+frame = 5
+frame_progress = 1.0
+script = ExtResource("6_uive5")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -173.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("7_524en")
+theme_override_font_sizes/font_size = 23
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("8_nmsxs")
