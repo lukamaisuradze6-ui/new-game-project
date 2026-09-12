@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bduty5dwnm0uk"]
+[gd_scene load_steps=22 format=3 uid="uid://bduty5dwnm0uk"]
 
 [ext_resource type="Texture2D" uid="uid://wdomskkdvd1n" path="res://sprites/scene_arts/dream man/1.png" id="1_ffvat"]
 [ext_resource type="Texture2D" uid="uid://cq3cn0rpmwoy1" path="res://sprites/scene_arts/dream man/2.png" id="2_ifq70"]
@@ -284,6 +284,15 @@ shader_parameter/vignette_amount = 0.3
 shader_parameter/abberation_amount = 0.01
 shader_parameter/darkness_amount = 0.15
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fgo4a"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+
 [node name="DREAM" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -309,12 +318,13 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -184.0
-offset_right = 6.0
-offset_bottom = 2.0
+offset_left = -1.0
+offset_top = -134.0
+offset_right = -293.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("17_mhc3y")
+theme_override_styles/normal = SubResource("StyleBoxFlat_fgo4a")
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("18_fgo4a")

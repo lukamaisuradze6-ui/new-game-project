@@ -1,3 +1,60 @@
-[gd_scene format=3 uid="uid://bxxy5uovky8wb"]
+[gd_scene load_steps=11 format=3 uid="uid://bxxy5uovky8wb"]
+
+[ext_resource type="Script" uid="uid://dujisd33nsojj" path="res://scripts/housenode2d.gd" id="1_f8rki"]
+[ext_resource type="Texture2D" uid="uid://bxvcwoyl7fcwk" path="res://sprites/backgrounds/House/House_Light_Off.png" id="1_fryda"]
+[ext_resource type="Texture2D" uid="uid://bf2ushmh6prff" path="res://sprites/backgrounds/House/House_Light_On.png" id="2_ouyo3"]
+[ext_resource type="Script" uid="uid://cy2gl810u1y7v" path="res://scripts/LightOffColorrect.gd" id="3_ouyo3"]
+[ext_resource type="Shader" uid="uid://cm0hydiosaqj3" path="res://scripts/lightsoffon.gdshader" id="3_whuk8"]
+[ext_resource type="Texture2D" uid="uid://y4hjuncttegu" path="res://sprites/enviornment/savegame.png" id="6_gsqte"]
+[ext_resource type="Script" uid="uid://lr4fg74d4fua" path="res://scenes/sprite_2d.gd" id="7_djptd"]
+[ext_resource type="Script" uid="uid://bb2lspksjow2y" path="res://scripts/fadeingame.gd" id="8_djptd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_whuk8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ouyo3")
+}, {
+"duration": 10.0,
+"texture": ExtResource("1_fryda")
+}],
+"loop": true,
+"name": &"lights",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f8rki"]
+shader = ExtResource("3_whuk8")
+shader_parameter/darkness = 0.7
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_f8rki")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(512, 256)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_whuk8")
+animation = &"lights"
+autoplay = "lights"
+frame_progress = 0.95725566
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_f8rki")
+offset_right = 1024.0
+offset_bottom = 512.0
+mouse_filter = 2
+color = Color(0.21230483, 0.21230483, 0.21230483, 1)
+script = ExtResource("3_ouyo3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(453.00006, 284)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("6_gsqte")
+script = ExtResource("7_djptd")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_right = 1025.0
+offset_bottom = 511.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("8_djptd")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b5u7tqmtotsw2"]
+[gd_scene load_steps=12 format=3 uid="uid://b5u7tqmtotsw2"]
 
 [ext_resource type="Shader" uid="uid://dyxjadljc6qi" path="res://Animation_Scenes/dream.gdshader" id="1_fu81o"]
 [ext_resource type="Texture2D" uid="uid://blsxhgcjmil2c" path="res://sprites/scene_arts/wakeup/1.jpg" id="1_gaobg"]
@@ -42,6 +42,15 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fu81o"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+
 [node name="WAKEUP" type="Node2D"]
 
 [node name="DreamFilter" type="ColorRect" parent="."]
@@ -66,12 +75,15 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -173.0
-offset_bottom = -26.0
+offset_left = 3.0
+offset_top = -126.0
+offset_right = -290.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("7_524en")
 theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_fu81o")
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("8_nmsxs")
