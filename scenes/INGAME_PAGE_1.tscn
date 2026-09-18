@@ -1,13 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://bxxy5uovky8wb"]
+[gd_scene load_steps=16 format=3 uid="uid://bxxy5uovky8wb"]
 
 [ext_resource type="Script" uid="uid://dujisd33nsojj" path="res://scripts/housenode2d.gd" id="1_f8rki"]
 [ext_resource type="Texture2D" uid="uid://bxvcwoyl7fcwk" path="res://sprites/backgrounds/House/House_Light_Off.png" id="1_fryda"]
 [ext_resource type="Texture2D" uid="uid://bf2ushmh6prff" path="res://sprites/backgrounds/House/House_Light_On.png" id="2_ouyo3"]
 [ext_resource type="Script" uid="uid://cy2gl810u1y7v" path="res://scripts/LightOffColorrect.gd" id="3_ouyo3"]
 [ext_resource type="Shader" uid="uid://cm0hydiosaqj3" path="res://scripts/lightsoffon.gdshader" id="3_whuk8"]
-[ext_resource type="Texture2D" uid="uid://y4hjuncttegu" path="res://sprites/enviornment/savegame.png" id="6_gsqte"]
-[ext_resource type="Script" uid="uid://lr4fg74d4fua" path="res://scenes/sprite_2d.gd" id="7_djptd"]
+[ext_resource type="PackedScene" uid="uid://qsik1ktr72ql" path="res://scenes/player/SavePoint_Scene.tscn" id="6_djptd"]
 [ext_resource type="Script" uid="uid://bb2lspksjow2y" path="res://scripts/fadeingame.gd" id="8_djptd"]
+[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://scenes/player/player.tscn" id="10_hwjwm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_whuk8"]
 animations = [{
@@ -27,6 +27,21 @@ animations = [{
 shader = ExtResource("3_whuk8")
 shader_parameter/darkness = 0.7
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_21e1v"]
+size = Vector2(723, 247.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cf41v"]
+size = Vector2(65, 82)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uuscp"]
+size = Vector2(18, 78.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q8ikt"]
+size = Vector2(24.5, 65.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xyuuu"]
+size = Vector2(135, 63)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_f8rki")
 
@@ -36,7 +51,7 @@ scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_whuk8")
 animation = &"lights"
 autoplay = "lights"
-frame_progress = 0.95725566
+frame_progress = 0.49100167
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_f8rki")
@@ -46,15 +61,36 @@ mouse_filter = 2
 color = Color(0.21230483, 0.21230483, 0.21230483, 1)
 script = ExtResource("3_ouyo3")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(453.00006, 284)
-scale = Vector2(2.3125, 2.1875)
-texture = ExtResource("6_gsqte")
-script = ExtResource("7_djptd")
+[node name="SavePoint" parent="." instance=ExtResource("6_djptd")]
 
 [node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
 offset_right = 1025.0
 offset_bottom = 511.0
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 script = ExtResource("8_djptd")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(493.5, 124.75)
+shape = SubResource("RectangleShape2D_21e1v")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(389.5, 287)
+shape = SubResource("RectangleShape2D_cf41v")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(322, 282.25)
+shape = SubResource("RectangleShape2D_uuscp")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(179.25, 282.75)
+shape = SubResource("RectangleShape2D_q8ikt")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(248.5, 277.5)
+shape = SubResource("RectangleShape2D_xyuuu")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("10_hwjwm")]

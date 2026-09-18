@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://qsik1ktr72ql"]
+
+[ext_resource type="Script" uid="uid://csp1qrvx0n6dm" path="res://scripts/savestate/SavePoint.gd" id="1_by1ec"]
+[ext_resource type="Texture2D" uid="uid://y4hjuncttegu" path="res://sprites/enviornment/savegame.png" id="2_xal43"]
+[ext_resource type="Script" uid="uid://lr4fg74d4fua" path="res://scenes/sprite_2d.gd" id="3_6l54g"]
+[ext_resource type="Shader" uid="uid://ivfgj30rgyet" path="res://scripts/savestate_shader.gdshader" id="4_6l54g"]
+[ext_resource type="FontFile" uid="uid://woba3cwutync" path="res://fonts/amstrad-cpc-extended.otf" id="4_xal43"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8656e"]
+size = Vector2(32.86483, 32.22857)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_76udi"]
+shader = ExtResource("4_6l54g")
+shader_parameter/dissolve_amount = 0.0
+
+[node name="SavePoint" type="Area2D"]
+script = ExtResource("1_by1ec")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(453.00003, 278.25)
+scale = Vector2(2.3124998, 2.1875)
+shape = SubResource("RectangleShape2D_8656e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(454, 282)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_xal43")
+script = ExtResource("3_6l54g")
+
+[node name="Label" type="Label" parent="."]
+material = SubResource("ShaderMaterial_76udi")
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 304.0
+offset_top = 223.0
+offset_right = 588.0
+offset_bottom = 246.0
+grow_horizontal = 0
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("4_xal43")
+text = "CLICK E TO SAVE GAME"
