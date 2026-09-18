@@ -1,5 +1,5 @@
 extends Node2D
-
+const LoadOrNew = "res://scenes/LoadOrNew.tscn"
 const INTRO_SCENE := "res://scenes/intro.tscn"
 const SETTINGS_SCENE := "res://scenes/settings.tscn"
 
@@ -13,7 +13,6 @@ func _ready() -> void:
 	Play_Button.pressed.connect(_on_play_button_pressed)
 	Settings_Button.pressed.connect(_on_settings_button_pressed)
 
-	# Optional hover animations
 	Play_Button.mouse_entered.connect(_on_play_mouse_entered)
 	Play_Button.mouse_exited.connect(_on_play_mouse_exited)
 
@@ -68,7 +67,7 @@ func _on_settings_button_pressed() -> void:
 
 func _on_play_button_pressed() -> void:
 	Settings.should_fade_in = true
-	_fade_out_and_change(INTRO_SCENE)
+	_fade_out_and_change(LoadOrNew)
 
 
 func _on_play_mouse_entered() -> void:

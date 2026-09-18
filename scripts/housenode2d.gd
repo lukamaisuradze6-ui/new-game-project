@@ -12,8 +12,6 @@ func _on_frame_changed():
 		return
 
 	if sprite.frame == 0:
-		# Light ON → remove dark filter
 		color_rect.material.set_shader_parameter("darkness", 0.0)
 	elif sprite.frame == 1:
-		# Light OFF → dark filter
 		color_rect.material.set_shader_parameter("darkness", 0.7)

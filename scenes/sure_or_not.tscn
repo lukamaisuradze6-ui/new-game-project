@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjg1nleleir2k"]
+
+[ext_resource type="Script" uid="uid://dhlnra5txblmi" path="res://scripts/sure_or_not.gd" id="1_jujgy"]
+[ext_resource type="Texture2D" uid="uid://cj5yy1cpalafs" path="res://sprites/backgrounds/staticcolor/bg1.png" id="1_qlay1"]
+[ext_resource type="FontFile" uid="uid://woba3cwutync" path="res://fonts/amstrad-cpc-extended.otf" id="2_aqafs"]
+
+[node name="SureOrNot" type="Node2D"]
+script = ExtResource("1_jujgy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(510.49997, 256.5)
+scale = Vector2(1.6511253, 1.4657143)
+texture = ExtResource("1_qlay1")
+
+[node name="Sure" type="Button" parent="Sprite2D"]
+offset_left = -129.81139
+offset_top = -72.46096
+offset_right = 114.188614
+offset_bottom = -4.7851715
+theme_override_fonts/font = ExtResource("2_aqafs")
+text = "are you sure?"
+
+[node name="Back" type="Button" parent="Sprite2D"]
+offset_left = -129.91138
+offset_top = 12.621834
+offset_right = 114.08862
+offset_bottom = 80.29762
+theme_override_fonts/font = ExtResource("2_aqafs")
+text = "go back"
