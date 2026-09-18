@@ -20,8 +20,8 @@ var intro_texts: Array[Dictionary] = [
 	{"text": "IF THIS WORLD WANTS TO TAKE HER TOO...", "speed": 0.04, "wait": 1.5, "sound_duration": 1.4},
 	{"text": "THEN I'LL BECOME A MONSTER", "speed": 0.03, "wait": 1.3, "sound_duration": 0.8},
 	{"text": "I'LL GROW HORNS", "speed": 0.02, "wait": 1.0, "sound_duration": 0.6},
-	{"text": "EVEN IF IT COSTS ME GATES OF HELL", "speed": 0.04, "wait": 2.0, "sound_duration": 1.4},
-	{"text": "AND ONE DAY, CURSE CAME ONTO ME...", "speed": 0.07, "wait": 3.5, "sound_duration": 2.1}
+	{"text": "EVEN IF IT COSTS ME THE GATES OF HELL", "speed": 0.04, "wait": 2.0, "sound_duration": 1.4},
+	{"text": "AND ONE DAY, A CURSE CAME OPON ME...", "speed": 0.07, "wait": 3.5, "sound_duration": 2.1}
 ]
 
 func _ready() -> void:
