@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bxxy5uovky8wb"]
+[gd_scene load_steps=17 format=3 uid="uid://bxxy5uovky8wb"]
 
 [ext_resource type="Script" uid="uid://dujisd33nsojj" path="res://scripts/housenode2d.gd" id="1_f8rki"]
 [ext_resource type="Texture2D" uid="uid://bxvcwoyl7fcwk" path="res://sprites/backgrounds/House/House_Light_Off.png" id="1_fryda"]
@@ -7,6 +7,7 @@
 [ext_resource type="Shader" uid="uid://cm0hydiosaqj3" path="res://scripts/lightsoffon.gdshader" id="3_whuk8"]
 [ext_resource type="PackedScene" uid="uid://qsik1ktr72ql" path="res://scenes/player/SavePoint_Scene.tscn" id="6_djptd"]
 [ext_resource type="Script" uid="uid://bb2lspksjow2y" path="res://scripts/fadeingame.gd" id="8_djptd"]
+[ext_resource type="PackedScene" uid="uid://c5mvncpimjefq" path="res://scenes/player/DialogueBox.tscn" id="9_6edrb"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://scenes/player/player.tscn" id="10_hwjwm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_whuk8"]
@@ -94,3 +95,6 @@ position = Vector2(248.5, 277.5)
 shape = SubResource("RectangleShape2D_xyuuu")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("10_hwjwm")]
+
+[node name="CanvasLayer" parent="." node_paths=PackedStringArray("player") instance=ExtResource("9_6edrb")]
+player = NodePath("../CharacterBody2D")

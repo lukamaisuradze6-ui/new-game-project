@@ -2,14 +2,19 @@ extends Node
 
 const SAVE_PATH = "user://savegame.json"
 
+var dialogue_seen := false
+
 
 func save_game(player):
 	var save_data = {
 		"scene": get_tree().current_scene.scene_file_path,
+
 		"player_position": {
 			"x": player.position.x,
 			"y": player.position.y
-		}
+		},
+
+		"dialogue_seen": dialogue_seen
 	}
 
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
@@ -40,5 +45,8 @@ func load_game(player):
 		pos["x"],
 		pos["y"]
 	)
+
+	# Load dialogue state
+	dialogue_seen = save_data.get("dialogue_seen", false)
 
 	print("GAME LOADED!")

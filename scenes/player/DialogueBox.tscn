@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5mvncpimjefq"]
+
+[ext_resource type="Script" uid="uid://khs0tu0q6ywb" path="res://scripts/dialogue_box.gd" id="1_yf0oe"]
+[ext_resource type="FontFile" uid="uid://woba3cwutync" path="res://fonts/amstrad-cpc-extended.otf" id="2_n7w33"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n7w33"]
+bg_color = Color(0.34117648, 0.34117648, 0.34117648, 0.18431373)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yf0oe"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_yf0oe")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 1.0
+offset_top = 408.0
+offset_right = 1024.0
+offset_bottom = 512.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_n7w33")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_right = 759.0
+offset_bottom = 103.0
+theme_override_fonts/font = ExtResource("2_n7w33")
+theme_override_styles/normal = SubResource("StyleBoxFlat_yf0oe")
+text = "fhfudhfu"
+horizontal_alignment = 1
+vertical_alignment = 1
