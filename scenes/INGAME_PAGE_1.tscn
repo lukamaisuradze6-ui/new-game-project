@@ -1,22 +1,25 @@
-[gd_scene load_steps=17 format=3 uid="uid://bxxy5uovky8wb"]
+[gd_scene load_steps=28 format=3 uid="uid://bxxy5uovky8wb"]
 
 [ext_resource type="Script" uid="uid://dujisd33nsojj" path="res://scripts/housenode2d.gd" id="1_f8rki"]
-[ext_resource type="Texture2D" uid="uid://bxvcwoyl7fcwk" path="res://sprites/backgrounds/House/House_Light_Off.png" id="1_fryda"]
-[ext_resource type="Texture2D" uid="uid://bf2ushmh6prff" path="res://sprites/backgrounds/House/House_Light_On.png" id="2_ouyo3"]
-[ext_resource type="Script" uid="uid://cy2gl810u1y7v" path="res://scripts/LightOffColorrect.gd" id="3_ouyo3"]
-[ext_resource type="Shader" uid="uid://cm0hydiosaqj3" path="res://scripts/lightsoffon.gdshader" id="3_whuk8"]
+[ext_resource type="Texture2D" uid="uid://cmrmi0jasxf5c" path="res://sprites/backgrounds/House/House_Light_Off.png" id="1_fryda"]
+[ext_resource type="Texture2D" uid="uid://dgh845wppw15a" path="res://sprites/backgrounds/House/0.png" id="2_hwjwm"]
 [ext_resource type="PackedScene" uid="uid://qsik1ktr72ql" path="res://scenes/player/SavePoint_Scene.tscn" id="6_djptd"]
 [ext_resource type="Script" uid="uid://bb2lspksjow2y" path="res://scripts/fadeingame.gd" id="8_djptd"]
 [ext_resource type="PackedScene" uid="uid://c5mvncpimjefq" path="res://scenes/player/DialogueBox.tscn" id="9_6edrb"]
+[ext_resource type="Texture2D" uid="uid://dguhjbn7o0r8q" path="res://sprites/backgrounds/House/assets/pic1.png" id="10_21e1v"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://scenes/player/player.tscn" id="10_hwjwm"]
+[ext_resource type="Texture2D" uid="uid://dd17ohr6jtl4t" path="res://sprites/backgrounds/House/assets/bed.png" id="10_q8ikt"]
+[ext_resource type="Texture2D" uid="uid://b2nfx3e58tqla" path="res://sprites/backgrounds/House/assets/pic2.png" id="11_21e1v"]
+[ext_resource type="Texture2D" uid="uid://bmgweaoowh0j0" path="res://sprites/backgrounds/House/assets/pic3.png" id="12_cf41v"]
+[ext_resource type="Texture2D" uid="uid://bvb3rtkny6tyr" path="res://sprites/backgrounds/House/assets/desk.png" id="13_uuscp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_whuk8"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_ouyo3")
+"texture": ExtResource("2_hwjwm")
 }, {
-"duration": 10.0,
+"duration": 1.0,
 "texture": ExtResource("1_fryda")
 }],
 "loop": true,
@@ -24,50 +27,176 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_f8rki"]
-shader = ExtResource("3_whuk8")
-shader_parameter/darkness = 0.7
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_21e1v"]
-size = Vector2(723, 247.5)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cf41v"]
-size = Vector2(65, 82)
+size = Vector2(70, 60)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uuscp"]
-size = Vector2(18, 78.5)
+size = Vector2(77, 301)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q8ikt"]
-size = Vector2(24.5, 65.5)
+size = Vector2(727, 250.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xyuuu"]
-size = Vector2(135, 63)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tdoci"]
+size = Vector2(11, 37)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_cf41v"]
+a = Vector2(-7, 521)
+b = Vector2(104, 332)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_uuscp"]
+a = Vector2(101, 336)
+b = Vector2(133, 254)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_q8ikt"]
+a = Vector2(855, 242)
+b = Vector2(1025, 511)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_tdoci"]
+a = Vector2(1035, 504)
+b = Vector2(-6, 505)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xyuuu"]
+texture = ExtResource("10_q8ikt")
+1:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cf41v"]
+texture = ExtResource("10_21e1v")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uuscp"]
+texture = ExtResource("11_21e1v")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q8ikt"]
+texture = ExtResource("12_cf41v")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tdoci"]
+texture = ExtResource("13_uuscp")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_uuscp"]
+sources/2 = SubResource("TileSetAtlasSource_cf41v")
+sources/3 = SubResource("TileSetAtlasSource_uuscp")
+sources/4 = SubResource("TileSetAtlasSource_q8ikt")
+sources/8 = SubResource("TileSetAtlasSource_tdoci")
+sources/10 = SubResource("TileSetAtlasSource_xyuuu")
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_f8rki")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(512, 256)
-scale = Vector2(4, 4)
+position = Vector2(512.00006, 256)
+scale = Vector2(0.42989087, 0.42953017)
 sprite_frames = SubResource("SpriteFrames_whuk8")
 animation = &"lights"
 autoplay = "lights"
-frame_progress = 0.49100167
-
-[node name="ColorRect" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_f8rki")
-offset_right = 1024.0
-offset_bottom = 512.0
-mouse_filter = 2
-color = Color(0.21230483, 0.21230483, 0.21230483, 1)
-script = ExtResource("3_ouyo3")
+frame = 1
+frame_progress = 0.11542969
 
 [node name="SavePoint" parent="." instance=ExtResource("6_djptd")]
+position = Vector2(295, 45)
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 visible = false
+z_index = 5
 offset_right = 1025.0
-offset_bottom = 511.0
+offset_bottom = 514.0
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 script = ExtResource("8_djptd")
@@ -75,26 +204,47 @@ script = ExtResource("8_djptd")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(493.5, 124.75)
-shape = SubResource("RectangleShape2D_21e1v")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(389.5, 287)
+position = Vector2(534, 245)
 shape = SubResource("RectangleShape2D_cf41v")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(322, 282.25)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(452.5, 149.5)
 shape = SubResource("RectangleShape2D_uuscp")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(179.25, 282.75)
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(497.5, 125.25)
 shape = SubResource("RectangleShape2D_q8ikt")
 
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(484.5, 290.5)
+shape = SubResource("RectangleShape2D_tdoci")
+
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(248.5, 277.5)
-shape = SubResource("RectangleShape2D_xyuuu")
+position = Vector2(422, 291)
+shape = SubResource("RectangleShape2D_tdoci")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_cf41v")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_uuscp")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_q8ikt")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 4)
+shape = SubResource("SegmentShape2D_tdoci")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("10_hwjwm")]
+z_index = 4
+position = Vector2(-190, -57)
 
 [node name="CanvasLayer" parent="." node_paths=PackedStringArray("player") instance=ExtResource("9_6edrb")]
 player = NodePath("../CharacterBody2D")
+
+[node name="TileMap" type="TileMap" parent="."]
+z_index = 2
+tile_set = SubResource("TileSet_uuscp")
+format = 2
+layer_0/tile_data = PackedInt32Array(65568, 2, 0, 131104, 2, 1, 196640, 2, 2, 262176, 2, 3, 65569, 65538, 0, 131105, 65538, 1, 196641, 65538, 2, 262177, 65538, 3, 65570, 131074, 0, 131106, 131074, 1, 196642, 131074, 2, 262178, 131074, 3, 524312, 3, 0, 589848, 3, 1, 655384, 3, 2, 720920, 3, 3, 524313, 65539, 0, 589849, 65539, 1, 655385, 65539, 2, 720921, 65539, 3, 524314, 131075, 0, 589850, 131075, 1, 655386, 131075, 2, 720922, 131075, 3, 524317, 4, 0, 589853, 4, 1, 655389, 4, 2, 720925, 4, 3, 524318, 65540, 0, 589854, 65540, 1, 655390, 65540, 2, 720926, 65540, 3, 524319, 131076, 0, 589855, 131076, 1, 655391, 131076, 2, 720927, 131076, 3, 851999, 8, 0, 917535, 8, 1, 983071, 8, 2, 1048607, 8, 3, 1114143, 8, 4, 852000, 65544, 0, 917536, 65544, 1, 983072, 65544, 2, 1048608, 65544, 3, 1114144, 65544, 4, 852001, 131080, 0, 917537, 131080, 1, 983073, 131080, 2, 1048609, 131080, 3, 1114145, 131080, 4, 852002, 196616, 0, 917538, 196616, 1, 983074, 196616, 2, 1048610, 196616, 3, 1114146, 196616, 4, 852003, 262152, 0, 917539, 262152, 1, 983075, 262152, 2, 1048611, 262152, 3, 1114147, 262152, 4, 1114137, 10, 5, 1179673, 10, 6, 1245209, 10, 7, 786458, 65546, 0, 851994, 65546, 1, 917530, 65546, 2, 983066, 65546, 3, 1048602, 65546, 4, 1114138, 65546, 5, 1179674, 65546, 6, 1245210, 65546, 7, 851995, 131082, 1, 917531, 131082, 2, 983067, 131082, 3, 1048603, 131082, 4, 1114139, 131082, 5, 1179675, 131082, 6, 851996, 196618, 1, 917532, 196618, 2, 983068, 196618, 3, 1048604, 196618, 4, 1114140, 196618, 5, 1179676, 196618, 6, 786461, 262154, 0, 851997, 262154, 1, 917533, 262154, 2, 983069, 262154, 3, 1048605, 262154, 4, 1114141, 262154, 5, 1179677, 262154, 6, 1245213, 262154, 7, 786462, 327690, 0, 851998, 327690, 1, 917534, 327690, 2, 983070, 327690, 3, 1048606, 327690, 4, 1114142, 327690, 5, 1179678, 327690, 6, 1245214, 327690, 7)

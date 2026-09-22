@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmrmi0jasxf5c"
-path="res://.godot/imported/House_Light_Off.png-87da1afa7b2a80d282b69dba8594ca78.ctex"
+uid="uid://b88hx3qkf3n0c"
+path="res://.godot/imported/Decor-removebg-preview.png-a5085cbb2c7f2c53e8284a5e2eadd8f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/backgrounds/House/House_Light_Off.png"
-dest_files=["res://.godot/imported/House_Light_Off.png-87da1afa7b2a80d282b69dba8594ca78.ctex"]
+source_file="res://sprites/enviornment/map Assets/Decor-removebg-preview.png"
+dest_files=["res://.godot/imported/Decor-removebg-preview.png-a5085cbb2c7f2c53e8284a5e2eadd8f0.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bf2ushmh6prff"
-path="res://.godot/imported/House_Light_On.png-30cd124052f0b70e5e3ab31bbb828ae3.ctex"
+uid="uid://bvb3rtkny6tyr"
+path="res://.godot/imported/desk.png-55c2cf1b62b121a329cf5b4a04f4a581.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/backgrounds/House/House_Light_On.png"
-dest_files=["res://.godot/imported/House_Light_On.png-30cd124052f0b70e5e3ab31bbb828ae3.ctex"]
+source_file="res://sprites/backgrounds/House/assets/desk.png"
+dest_files=["res://.godot/imported/desk.png-55c2cf1b62b121a329cf5b4a04f4a581.ctex"]
 
 [params]
 

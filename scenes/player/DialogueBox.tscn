@@ -21,6 +21,7 @@ border_width_bottom = 4
 script = ExtResource("1_yf0oe")
 
 [node name="Panel" type="Panel" parent="."]
+z_index = 4
 offset_left = 1.0
 offset_top = 408.0
 offset_right = 1024.0
@@ -29,8 +30,10 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_n7w33")
 
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 0
-offset_right = 759.0
-offset_bottom = 103.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 766.0
+offset_bottom = 100.0
 theme_override_fonts/font = ExtResource("2_n7w33")
 theme_override_styles/normal = SubResource("StyleBoxFlat_yf0oe")
 text = "fhfudhfu"

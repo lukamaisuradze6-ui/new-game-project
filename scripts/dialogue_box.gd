@@ -27,15 +27,13 @@ var dialogue_finished := false
 
 func _ready():
 
-	# If this dialogue has already happened,
-	# don't play it again.
+
 	if SaveManager.dialogue_seen:
 		hide()
 		return
 
 	dialogue_label.text = ""
 
-	# Mark dialogue as seen immediately.
 	SaveManager.dialogue_seen = true
 
 	if player:
@@ -45,7 +43,6 @@ func _ready():
 
 func _process(_delta):
 
-	# Dialogue is completely finished
 	if dialogue_finished:
 
 		if Input.is_action_just_pressed("ui_accept"):
@@ -58,7 +55,6 @@ func _process(_delta):
 
 		return
 
-	# Accept while text is typing = instantly finish current line
 	if Input.is_action_just_pressed("ui_accept") and typing:
 
 		dialogue_label.text += dialogue_lines[current_line].substr(current_character)
@@ -96,7 +92,6 @@ func type_line():
 
 	if current_line < dialogue_lines.size():
 
-		# Every 3 lines
 		if current_line % 3 == 0:
 
 			await get_tree().create_timer(wait_after_three_lines).timeout
@@ -113,5 +108,4 @@ func type_line():
 
 	else:
 
-		# Keep final dialogue visible
 		dialogue_finished = true
