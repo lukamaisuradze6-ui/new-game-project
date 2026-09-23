@@ -262,3 +262,11 @@ NO THIS IS CRAZY"
 [node name="InteractBox2" parent="." instance=ExtResource("13_q8ikt")]
 position = Vector2(972, 473)
 dialogue_text = "WHAT THE F** DO YOU WANT THERE"
+
+[node name="InteractBox3" parent="." instance=ExtResource("13_q8ikt")]
+position = Vector2(455, 283)
+dialogue_text = "I CAN'T FIX MY BED RIGHT NOW"
+
+[node name="InteractBox4" parent="." instance=ExtResource("13_q8ikt")]
+position = Vector2(547, 236)
+dialogue_text = "JUST A WEED"
