@@ -22,6 +22,7 @@ border_width_right = 4
 border_width_bottom = 4
 
 [node name="InteractBox" type="Area2D"]
+z_index = 100
 script = ExtResource("1_d86gp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

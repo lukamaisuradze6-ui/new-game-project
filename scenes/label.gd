@@ -1,3 +1,4 @@
+
 extends Label
 
 const SILENT_DB := -80.0
@@ -24,41 +25,104 @@ var intro_texts: Array[Dictionary] = [
 	{"text": "AND ONE DAY, A CURSE CAME OPON ME...", "speed": 0.07, "wait": 3.5, "sound_duration": 2.1}
 ]
 
+
+var skip_line := false
+var typing := false
+
+
 func _ready() -> void:
 	text = ""
-	await _run_intro()
+	_run_intro()
+
+
+func _process(_delta: float) -> void:
+
+	if Input.is_action_just_pressed("interact"):
+
+		# If the line is currently typing,
+		# instantly finish it.
+		if typing:
+			skip_line = true
+
+		# If the line has already finished typing,
+		# skip the waiting time.
+		else:
+			skip_line = true
+
 
 func _run_intro() -> void:
+
 	for slide in intro_texts:
+
+		skip_line = false
+		typing = true
+
 		text = slide["text"]
 		visible_characters = 0
 		modulate.a = 1.0
 
-		var type_duration: float = text.length() * slide["speed"]
-		var sound_duration: float = slide.get("sound_duration", type_duration + slide["wait"])
+		var speed: float = slide["speed"]
+		var sound_duration: float = slide.get(
+			"sound_duration",
+			text.length() * speed + slide["wait"]
+		)
 
 		audio_player.volume_db = 0.0
 		audio_player.play()
 
-		get_tree().create_timer(sound_duration).timeout.connect(audio_player.stop)
-
-		var type_tween := create_tween()
-		type_tween.tween_property(
-			self,
-			"visible_characters",
-			text.length(),
-			type_duration
+		get_tree().create_timer(sound_duration).timeout.connect(
+			audio_player.stop
 		)
 
-		await type_tween.finished
-		await get_tree().create_timer(slide["wait"]).timeout
+		# -------------------------
+		# TYPE THE TEXT
+		# -------------------------
+
+		while visible_characters < text.length():
+
+			if skip_line:
+				visible_characters = text.length()
+				break
+
+			visible_characters += 1
+
+			await get_tree().create_timer(speed).timeout
+
+		typing = false
+
+
+		# -------------------------
+		# WAIT AFTER TEXT
+		# -------------------------
+
+		if not skip_line:
+
+			var wait_time: float = slide["wait"]
+			var elapsed := 0.0
+
+			while elapsed < wait_time:
+
+				if skip_line:
+					break
+
+				await get_tree().create_timer(0.05).timeout
+				elapsed += 0.05
+
+
+		# -------------------------
+		# FADE OUT
+		# -------------------------
+
 		await _fade_current_slide()
 
 		audio_player.stop()
 
+
 	_on_intro_finished()
 
+
 func _fade_current_slide() -> void:
+
 	var fade_tween := create_tween()
 	fade_tween.set_parallel(true)
 
@@ -78,7 +142,9 @@ func _fade_current_slide() -> void:
 
 	await fade_tween.finished
 
+
 func _on_intro_finished() -> void:
+
 	audio_player.stop()
 
 	var fade_overlay = get_node_or_null("../FadeOverlay")
