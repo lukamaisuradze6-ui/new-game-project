@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://clk0ekim84x4q"]
+
+[ext_resource type="Script" uid="uid://qrscm1idvesl" path="res://scripts/interaction_box.gd" id="1_d86gp"]
+[ext_resource type="FontFile" uid="uid://woba3cwutync" path="res://fonts/amstrad-cpc-extended.otf" id="1_r42ih"]
+[ext_resource type="Script" uid="uid://dptxpa5m0wnke" path="res://scripts/ReusableItemsScripts/DialogueBox_Reusable.gd" id="3_bll3h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uxfok"]
+size = Vector2(75, 73)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_627er"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8sv00"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+
+[node name="InteractBox" type="Area2D"]
+script = ExtResource("1_d86gp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_uxfok")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -44.0
+offset_top = -58.0
+offset_right = 52.0
+offset_bottom = -35.0
+theme_override_fonts/font = ExtResource("1_r42ih")
+theme_override_font_sizes/font_size = 8
+text = "E TO INTERACT"
+
+[node name="Dialogue" type="CanvasLayer" parent="."]
+script = ExtResource("3_bll3h")
+dialogue_text = "boom
+bap skrr"
+
+[node name="Panel" type="Panel" parent="Dialogue"]
+offset_top = 385.0
+offset_right = 1024.0
+offset_bottom = 512.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_627er")
+
+[node name="Label" type="Label" parent="Dialogue/Panel"]
+layout_mode = 0
+offset_right = 736.0
+offset_bottom = 127.0
+theme_override_fonts/font = ExtResource("1_r42ih")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8sv00")
+horizontal_alignment = 1
+vertical_alignment = 1

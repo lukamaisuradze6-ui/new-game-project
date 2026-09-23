@@ -30,10 +30,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_n7w33")
 
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 4.0
-offset_top = 4.0
 offset_right = 766.0
-offset_bottom = 100.0
+offset_bottom = 104.0
 theme_override_fonts/font = ExtResource("2_n7w33")
 theme_override_styles/normal = SubResource("StyleBoxFlat_yf0oe")
 text = "fhfudhfu"
