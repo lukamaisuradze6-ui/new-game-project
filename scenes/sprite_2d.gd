@@ -5,8 +5,10 @@ extends Sprite2D
 
 var start_y: float
 
+
 func _ready():
 	start_y = position.y
 
-func _process(delta):
+
+func _process(_delta):
 	position.y = start_y + sin(Time.get_ticks_msec() / 1000.0 * speed) * move_distance
